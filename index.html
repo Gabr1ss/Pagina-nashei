@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Game of the Year 2019-2022</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "goty-dark": "#1a1a1a",
+                        "goty-gold": "#ffd700",
+                        "goty-gray": "#333333",
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-goty-dark text-white font-sans">
+
+    <header id="navbar" class="bg-black border-b border-goty-gray fixed w-full z-40 transition duration-300">
+        <div class="container mx-auto flex justify-between items-center px-6 py-4">
+            <h1 class="text-3xl font-bold text-goty-gold hover:scale-105 transform transition duration-300 cursor-pointer">Game Awards 2019-2022</h1>
+            <nav class="space-x-6">
+                <a href="#presentacion" class="hover:text-goty-gold hover:underline transition duration-300 text-lg">Inicio</a>
+                <a href="#galeria" class="hover:text-goty-gold hover:underline transition duration-300 text-lg">Galería</a>
+                <a href="#contacto" class="hover:text-goty-gold hover:underline transition duration-300 text-lg">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <section id="presentacion" class="relative pt-20">
+        <div id="presentacion-background" class="overflow-hidden h-screen bg-cover bg-center" style="background-image: url('assets/Goty.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <div class="text-center px-4">
+                    <h2 class="text-5xl font-extrabold text-goty-gold drop-shadow-lg">Celebrando los Mejores Videojuegos</h2>
+                    <p class="text-lg mt-4 text-gray-300">Explora los ganadores y nominados desde 2019 a 2022</p>
+                    <a href="#galeria" class="mt-6 inline-block px-8 py-3 bg-goty-gold text-black font-semibold rounded hover:bg-yellow-500">Explorar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="galeria" class="py-16 bg-goty-dark">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Galería de Juegos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="relative group cursor-pointer" data-game="sekiro">
+                    <img src="assets/goty-2019.jpg" alt="Sekiro" class="w-full h-64 object-cover rounded-lg shadow-md transition transform group-hover:scale-105 group-hover:shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-goty-gold">Sekiro: Shadows Die Twice</h3>
+                        <p class="text-sm text-gray-300 mt-2">Ganador del GOTY 2019</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer" data-game="tlou2">
+                    <img src="assets/goty-2020.jpg" alt="TLOU2" class="w-full h-64 object-cover rounded-lg shadow-md transition transform group-hover:scale-105 group-hover:shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-goty-gold">The Last of Us Part II</h3>
+                        <p class="text-sm text-gray-300 mt-2">Ganador del GOTY 2020</p>
+                    </div>
+                </div>
+                <div class="relative group cursor-pointer" data-game="eldenRing">
+                    <img src="assets/goty-2022.jpg" alt="Elden Ring" class="w-full h-64 object-cover rounded-lg shadow-md transition transform group-hover:scale-105 group-hover:shadow-lg">
+                    <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition">
+                        <h3 class="text-xl font-bold text-goty-gold">Elden Ring</h3>
+                        <p class="text-sm text-gray-300 mt-2">Ganador del GOTY 2022</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="bg-goty-gray text-white rounded-lg shadow-lg p-8 max-w-lg relative">
+            <button id="close-modal" class="absolute top-3 right-3 text-gray-300 hover:text-white">✖</button>
+            <img id="modal-image" src="" alt="" class="rounded-lg mb-4 w-full hidden">
+            <h3 id="modal-title" class="text-2xl font-bold mb-4"></h3>
+            <p id="modal-description" class="text-gray-300"></p>
+        </div>
+    </div>
+
+    
+    <section id="contacto" class="py-16 bg-black">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-8">Contáctanos</h2>
+            <form id="contact-form" class="max-w-lg mx-auto bg-goty-gray p-8 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-bold mb-2">Nombre</label>
+                    <input type="text" id="name" class="w-full bg-gray-800 border border-gray-600 rounded p-3 text-white focus:ring-2 focus:ring-goty-gold focus:outline-none" placeholder="Escribe tu nombre">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                    <input type="email" id="email" class="w-full bg-gray-800 border border-gray-600 rounded p-3 text-white focus:ring-2 focus:ring-goty-gold focus:outline-none" placeholder="Escribe tu email">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-sm font-bold mb-2">Mensaje</label>
+                    <textarea id="message" class="w-full bg-gray-800 border border-gray-600 rounded p-3 text-white focus:ring-2 focus:ring-goty-gold focus:outline-none" rows="5" placeholder="Escribe tu mensaje"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-goty-gold text-black font-semibold py-3 rounded hover:bg-yellow-500">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+   
+    <footer class="bg-black py-4">
+        <div class="container mx-auto text-center text-sm text-gray-500">
+            &copy; 2024 - Página Coleccion de Game Awards
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+header {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+header nav a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+
+.group:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(255, 215, 0, 0.6);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+
+
+#presentacion {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.95)), url('assets/goty-banner.jpg') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+#presentacion h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+#presentacion a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: #121212;
+    background-color: #f0c94d;
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#presentacion a:hover {
+    transform: scale(1.1);
+    background-color: #e0b400;
+}
+
+
+#galeria {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+}
+
+#galeria h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+#galeria .grid {
+    gap: 30px;
+}
+
+#galeria img {
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+#modal {
+    z-index: 50;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+#modal .rounded-lg {
+    background-color: #222;
+    color: #f5f5f5;
+    padding: 30px;
+    animation: scaleUp 0.3s ease-out;
+}
+
+#modal h3 {
+    color: #f0c94d;
+    font-size: 1.8rem;
+}
+
+#modal p {
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+
+#contacto {
+    padding: 60px 20px;
+    background-color: #121212;
+}
+
+#contacto h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #f5f5f5;
+}
+
+#contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: linear-gradient(to right, #1e1e1e, #2a2a2a);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+#contacto input,
+#contacto textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    font-size: 1rem;
+}
+
+#contacto button {
+    width: 100%;
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #121212;
+    background-color: #f0c94d;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: #e0b400;
+    transform: scale(1.05);
+}
+
+
+footer {
+    background-color: #1c1c1c;
+    color: #777;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#presentacion-background {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease-in-out;
+}
+
+#navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+}
